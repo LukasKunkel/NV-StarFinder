@@ -136,7 +136,7 @@ class MainWindow(QMainWindow):
                                 )=1 \
                                 AND (phot_g_mean_mag >= {G_obj} - {bereich}) \
                                 AND (phot_g_mean_mag <= {G_obj} + {bereich}) \
-                                AND (phot_variable_flag != 'VARIABLE') "  # AND (teff_gspphot != 0)"
+                                AND (phot_variable_flag != 'VARIABLE') "
         job2 = Gaia.launch_job(query2)
         results2 = job2.get_results()
         ra_star = results2['ra']
@@ -273,6 +273,6 @@ widget.setGeometry(100, 100, 900, 700)
 widget.setWindowTitle("Star finder")
 widget.show()
 try:
-    pass  # sys.exit(app.exec_())
+    sys.exit(app.exec_())
 finally:
     pass
